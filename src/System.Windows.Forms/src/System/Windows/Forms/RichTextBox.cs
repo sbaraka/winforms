@@ -3137,13 +3137,15 @@ namespace System.Windows.Forms
 
         private string GetTextEx(GT flags = GT.DEFAULT)
         {
+            Debug.Assert(IsHandleCreated);
+
             GETTEXTLENGTHEX gtl = new GETTEXTLENGTHEX
             {
                 codepage = 1200, // Unicode
                 flags = GTL.DEFAULT
             };
 
-            IntPtr res = User32.SendMessageW<GETTEXTLENGTHEX>(Handle, (User32.WM)User32.EM.GETTEXTLENGTHEX, ref gtl, IntPtr.Zero);
+            IntPtr res = User32.SendMessageW(Handle, (User32.WM)User32.EM.GETTEXTLENGTHEX, ref gtl, IntPtr.Zero);
             if ((HRESULT)res == HRESULT.E_INVALIDARG) // E_INVALIDARG
                 throw new Win32Exception(unchecked((int)res));
 
