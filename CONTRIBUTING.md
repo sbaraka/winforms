@@ -4,6 +4,8 @@
 
 You can contribute to Windows Forms with issues, pull-requests, and general reviews of both issues and pull-requests. Simply filing issues for problems you encounter is a great way to contribute. Contributing implementations is greatly appreciated.
 
+I AM THE CONTRIBUTER
+
 ## Contribution "Bar"
 
 Project maintainers will merge changes that improve the product significantly and broadly and that align with the our [Roadmap](docs/roadmap.md).
